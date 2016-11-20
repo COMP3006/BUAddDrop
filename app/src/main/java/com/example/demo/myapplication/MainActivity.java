@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mUsernameField, mPasswordField, mPassword2Field;
     private MainController mMainController;
 
-    @Override hello banana
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -31,7 +31,13 @@ public class MainActivity extends AppCompatActivity {
                 String userpassword = mPasswordField.getText().toString().trim();
                 String userpassword2 = mPassword2Field.getText().toString().trim();
                 //Toast.makeText(getApplicationContext(),"username: " + username + "\n" + "password: " + userpassword,Toast.LENGTH_LONG).show();
-                if (!userpassword.equals(userpassword2)) {
+                if (username.isEmpty()) {
+                    Toast.makeText(getApplicationContext(),"Error: Username is missing",Toast.LENGTH_LONG).show();
+                } else if (userpassword.isEmpty()) {
+                    Toast.makeText(getApplicationContext(),"Error: Password is missing",Toast.LENGTH_LONG).show();
+                } else if (userpassword2.isEmpty()) {
+                    Toast.makeText(getApplicationContext(),"Error: Confirmed password is missing",Toast.LENGTH_LONG).show();
+                } else if (!userpassword.equals(userpassword2)) {
                     Toast.makeText(getApplicationContext(),"Error: Unmatched Password",Toast.LENGTH_LONG).show();
                 } else {
                     mMainController.login(username,userpassword, userpassword2);
