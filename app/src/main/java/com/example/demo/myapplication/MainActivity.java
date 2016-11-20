@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onErrorReceived(String text){
-        Toast.makeText(getApplicationContext(),"failed: " + text,Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "failed: " + "Username is being used already.", Toast.LENGTH_LONG).show();
     }
 
 
