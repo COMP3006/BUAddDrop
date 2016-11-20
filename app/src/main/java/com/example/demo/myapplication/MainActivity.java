@@ -47,14 +47,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onResultReceived(String text){
-        Toast.makeText(getApplicationContext(),"register successfully with: " + text,Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"Register successfully with: " + text,Toast.LENGTH_LONG).show();
         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
         startActivity(intent);
         finish();
     }
 
     public void onErrorReceived(String text){
-        Toast.makeText(getApplicationContext(), "failed: " + "Username is being used already.", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Error: " + "Username is being used already.", Toast.LENGTH_LONG).show();
     }
 
 
