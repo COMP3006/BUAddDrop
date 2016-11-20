@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }kk
+    }
 
     public void onResultReceived(String text){
         Toast.makeText(getApplicationContext(),"register successfully with: " + text,Toast.LENGTH_LONG).show();
