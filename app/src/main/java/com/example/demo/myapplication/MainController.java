@@ -22,7 +22,7 @@ public class MainController {
     public MainController(MainActivity mainActivity){
         mMainActivity = mainActivity;
     }
-    public void login(String username, String password){
+    public void login(String username, String password, String password2){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://158.182.6.135/")
                 .addConverterFactory(GsonConverterFactory.create())
