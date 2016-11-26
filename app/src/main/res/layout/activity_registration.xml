@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.example.demo.myapplication.MainActivity">
+    tools:context="com.example.demo.myapplication.RegistrationActivity">
 
     <TextView
         android:text=" Please create an account with username and password."
@@ -18,19 +18,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="username"
-        android:id="@+id/register_edit_text_username" />
+        android:id="@+id/register_edit_text_username"
+        android:singleLine="true" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="password"
-        android:id="@+id/register_edit_text_userpassword" />
+        android:id="@+id/register_edit_text_userpassword"
+        android:singleLine="true"
+        android:password="true" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="confirmed password"
-        android:id="@+id/register_edit_text_userpassword2" />
+        android:id="@+id/register_edit_text_userpassword2"
+        android:singleLine="true"
+        android:password="true" />
 
     <Button
         android:layout_width="wrap_content"
