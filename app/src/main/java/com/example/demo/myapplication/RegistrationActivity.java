@@ -3,13 +3,14 @@ package com.example.demo.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.demo.myapplication.Components.Interface.DBCommunicator;
+
+public class RegistrationActivity extends AppCompatActivity implements DBCommunicator{
 
     private Button mRegisterButton;
     private TextView mUsernameField, mPasswordField, mPassword2Field;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_registration);
         mRegisterButton = (Button)findViewById(R.id.register_button_registration);
         mUsernameField  = (TextView)findViewById(R.id.register_edit_text_username);
         mPasswordField  = (TextView)findViewById(R.id.register_edit_text_userpassword);
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (!userpassword.equals(userpassword2)) {
                     Toast.makeText(getApplicationContext(),"Error: Unmatched Password",Toast.LENGTH_LONG).show();
                 } else {
-                    mMainController.login(username,userpassword, userpassword2);
+                    mMainController.register(username,userpassword);
                 }
             }
         });
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onResultReceived(String text){
         Toast.makeText(getApplicationContext(),"Register successfully with: " + text,Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+        Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
         startActivity(intent);
         finish();
     }

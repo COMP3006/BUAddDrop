@@ -1,9 +1,8 @@
 package com.example.demo.myapplication;
 
+import com.example.demo.myapplication.Components.Interface.DBCommunicator;
 import com.example.demo.myapplication.Components.Interface.UserService;
 import com.google.gson.JsonObject;
-
-import org.json.JSONObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -17,12 +16,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainController {
 
-    private MainActivity mMainActivity;
+    private DBCommunicator dbc;
 
-    public MainController(MainActivity mainActivity){
-        mMainActivity = mainActivity;
+    public MainController(DBCommunicator db_communicator){
+        dbc = db_communicator;
     }
-    public void login(String username, String password, String password2){
+
+    public void login(String username, String password){
+    }
+
+    public void register(String username, String password){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://158.182.6.135/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -33,13 +36,13 @@ public class MainController {
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                 JsonObject jsonObject = response.body();
                 String result = jsonObject.toString();
-                mMainActivity.onResultReceived(result);
+                dbc.onResultReceived(result);
             }
 
             @Override
             public void onFailure(Call<JsonObject> call, Throwable t) {
                 String message = t.toString();
-                mMainActivity.onErrorReceived(message);
+                dbc.onErrorReceived(message);
             }
         });
     }
