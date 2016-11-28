@@ -40,14 +40,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="?attr/homeAsUpIndicator"
-        android:id="@+id/imageButton" />
+        android:id="@+id/imageButton"
+        android:visibility="visible" />
 
     <Button
         android:text="Log In"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/LogIn"
-        android:layout_gravity="top" />
+        android:layout_gravity="top"
+        android:visibility="visible" />
 
     <EditText
         android:layout_width="wrap_content"
