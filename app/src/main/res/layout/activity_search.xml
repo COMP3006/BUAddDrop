@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.demo.myapplication.LoginActivity">
+    tools:context="com.example.demo.myapplication.SearchActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -34,71 +34,26 @@
         android:layout_width="wrap_content"
         android:layout_gravity="top|right" />
 
-    <TextView
-        android:text="Register Here!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/blogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
-        android:id="@+id/tvRegisterLink"
-        android:textColor="@android:color/holo_blue_dark"
-        android:visibility="invisible" />
-
     <Button
         android:text="Log In"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/LogIn"
-        android:layout_gravity="top"
-        android:visibility="invisible" />
-
-    <Button
-        android:text="Login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/blogin"
-        android:layout_below="@+id/etUsername"
-        android:layout_alignStart="@+id/tvRegisterLink"
-        android:layout_gravity="bottom|center" />
-
-    <TextView
-        android:text="Please login with username and password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvInputinfo"
-        android:layout_marginBottom="69dp"
-        android:layout_above="@+id/blogin"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="top|right"
-        android:visibility="invisible" />
+        android:layout_gravity="top" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="308dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_alignParentTop="true"
         android:id="@+id/etUsername"
         android:layout_alignParentStart="true"
+        android:hint="e.g. COMP3006, Software Engineering"
+        android:layout_gravity="center_vertical"
         android:layout_alignParentEnd="true"
         android:singleLine="true"
-        android:hint="username"
-        android:layout_gravity="center_vertical"
-        android:layout_marginBottom="50dp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/etPassword"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:singleLine="true"
-        android:password="true"
-        android:hint="password"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="50dp" />
+        android:background="@color/colorAccent"
+        android:outlineProvider="none" />
 
     <include layout="@layout/content_search" />
 

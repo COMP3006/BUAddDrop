@@ -1,46 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context="com.example.demo.myapplication.RegistrationActivity">
 
-    <TextView
-        android:text=" Please create an account with username and password."
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/RegisterWord" />
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <Button
+        android:text="Register"
+        android:layout_height="wrap_content"
+        android:id="@+id/Register"
+        android:layout_width="wrap_content"
+        android:layout_gravity="top|right"
+        android:visibility="invisible" />
+
+    <Button
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/register_button_registration"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_width="wrap_content" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="?attr/homeAsUpIndicator"
+        android:id="@+id/imageButton" />
+
+    <Button
+        android:text="Log In"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LogIn"
+        android:layout_gravity="top" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="username"
         android:id="@+id/register_edit_text_username"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginBottom="100dp" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="password"
         android:id="@+id/register_edit_text_userpassword"
         android:singleLine="true"
-        android:password="true" />
+        android:password="true"
+        android:layout_gravity="left|center_vertical" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="confirmed password"
         android:id="@+id/register_edit_text_userpassword2"
         android:singleLine="true"
-        android:password="true" />
+        android:password="true"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginTop="100dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Account"
-        android:layout_gravity="start"
-        android:id="@+id/register_button_registration" />
-</LinearLayout>
+    <include layout="@layout/content_search" />
+
+</android.support.design.widget.CoordinatorLayout>
