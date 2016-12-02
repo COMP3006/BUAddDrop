@@ -1,6 +1,14 @@
 <resources>
-    <string name="app_name">BU AddDrop</string>
-    <string name="title_activity_search">SearchActivity</string>
-    <string name="title_activity_confirmation">ConfirmationActivity</string>
-    <string name="title_activity_result">ResultActivity</string>
+    <string name="app_name">BUAddDrop</string>
+
+    <!-- CourseInfo activity -->
+    <string name="course_code">Code: </string>
+    <string name="course_title">Title: </string>
+    <string name="course_unit">Unit: </string>
+    <string name="course_level">Level: </string>
+    <string name="course_moi">MOI: </string>
+
+    <string name="course_sec_section">Section: </string>
+    <string name="course_sec_lecturer">Lecturer: </string>
+    <string name="course_sec_time">Time: </string>
 </resources>

@@ -49,8 +49,7 @@ public class RegistrationActivity extends AppCompatActivity implements DBCommuni
 
     public void onResultReceived(String text){
         Toast.makeText(getApplicationContext(),"Register successfully with: " + text,Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(RegistrationActivity.this, HomeActivity.class));
         finish();
     }
 

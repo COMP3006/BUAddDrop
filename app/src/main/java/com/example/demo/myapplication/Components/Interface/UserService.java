@@ -10,13 +10,22 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 /**
- * Created by demo on 11/5/2016.
+ * ----------------------------- NEED TO FILL login() and getCourseList() !!!!! -----------------------------
+ * ----------------------------- NEED TO FILL login() and getCourseList() !!!!! -----------------------------
+ * ----------------------------- NEED TO FILL login() and getCourseList() !!!!! -----------------------------
  */
 
-public interface UserService {
+public interface UserService
+{
+    Call<JsonObject> login();
+
     @FormUrlEncoded
     @POST("me/")
     Call<JsonObject> register(
             @Field("username") String username,
             @Field("userpassword") String userpassword);
+
+
+    Call<JsonObject> getCourseList();
+
 }
