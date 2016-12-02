@@ -10,9 +10,9 @@ import android.widget.Toast;
 
 import com.example.demo.myapplication.Components.Interface.DBCommunicator;
 
-public class RegistrationActivity extends AppCompatActivity implements DBCommunicator{
+public class RegistrationActivity extends AppCompatActivity implements DBCommunicator, View.OnClickListener {
 
-    private Button mRegisterButton;
+    public Button tBarLogin, tBarHome, mRegisterButton;
     private TextView mUsernameField, mPasswordField, mPassword2Field;
     private MainController mMainController;
 
@@ -20,31 +20,48 @@ public class RegistrationActivity extends AppCompatActivity implements DBCommuni
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        mRegisterButton = (Button)findViewById(R.id.register_button_registration);
-        mUsernameField  = (TextView)findViewById(R.id.register_edit_text_username);
-        mPasswordField  = (TextView)findViewById(R.id.register_edit_text_userpassword);
-        mPassword2Field  = (TextView)findViewById(R.id.register_edit_text_userpassword2);
+        mRegisterButton = (Button) findViewById(R.id.mRegisterButton);
+        mUsernameField = (TextView) findViewById(R.id.register_edit_text_username);
+        mPasswordField = (TextView) findViewById(R.id.register_edit_text_userpassword);
+        mPassword2Field = (TextView) findViewById(R.id.register_edit_text_userpassword2);
+        tBarLogin = (Button) findViewById(R.id.tBarLogin);
+        tBarHome = (Button) findViewById(R.id.tBarHome);
+        tBarLogin.setOnClickListener(this);
+        tBarHome.setOnClickListener(this);
         mMainController = new MainController(this);
-        mRegisterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        mRegisterButton.setOnClickListener(this);
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        //Toast.makeText(getApplicationContext(),"username: " + username + "\n" + "password: " + userpassword,Toast.LENGTH_LONG).show();
+        switch (view.getId()) {
+            case R.id.mRegisterButton:
                 String username = mUsernameField.getText().toString().trim();
                 String userpassword = mPasswordField.getText().toString().trim();
                 String userpassword2 = mPassword2Field.getText().toString().trim();
-                //Toast.makeText(getApplicationContext(),"username: " + username + "\n" + "password: " + userpassword,Toast.LENGTH_LONG).show();
                 if (username.isEmpty()) {
-                    Toast.makeText(getApplicationContext(),"Error: Username is missing",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Error: Username is missing", Toast.LENGTH_LONG).show();
                 } else if (userpassword.isEmpty()) {
-                    Toast.makeText(getApplicationContext(),"Error: Password is missing",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Error: Password is missing", Toast.LENGTH_LONG).show();
                 } else if (userpassword2.isEmpty()) {
-                    Toast.makeText(getApplicationContext(),"Error: Confirmed password is missing",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Error: Confirmed password is missing", Toast.LENGTH_LONG).show();
                 } else if (!userpassword.equals(userpassword2)) {
-                    Toast.makeText(getApplicationContext(),"Error: Unmatched Password",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Error: Unmatched Password", Toast.LENGTH_LONG).show();
                 } else {
-                    mMainController.register(username,userpassword);
+                    mMainController.register(username, userpassword);
                 }
-            }
-        });
+                break;
+
+            case R.id.tBarLogin:
+                startActivity(new Intent(this, LoginActivity.class));
+                break;
+
+            case R.id.tBarHome:
+                startActivity(new Intent(this, SearchActivity.class));
+                break;
+        }
     }
 
     public void onResultReceived(String text){
@@ -56,6 +73,5 @@ public class RegistrationActivity extends AppCompatActivity implements DBCommuni
     public void onErrorReceived(String text){
         Toast.makeText(getApplicationContext(), "Error: " + "Username is being used already.", Toast.LENGTH_LONG).show();
     }
-
 
 }

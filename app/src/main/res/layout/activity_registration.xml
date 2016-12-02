@@ -15,27 +15,27 @@
         android:id="@+id/Register"
         android:layout_width="wrap_content"
         android:layout_gravity="top|right"
-        android:visibility="invisible" />
+        android:visibility="visible"
+        android:background="@android:color/darker_gray" />
 
     <Button
         android:layout_height="wrap_content"
         android:text="Register"
-        android:id="@+id/register_button_registration"
+        android:id="@+id/mRegisterButton"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_width="wrap_content" />
 
-    <ImageButton
+    <Button
+        android:text="Home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="?attr/homeAsUpIndicator"
-        android:id="@+id/imageButton"
-        android:visibility="visible" />
+        android:id="@+id/tBarHome" />
 
     <Button
         android:text="Log In"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/LogIn"
+        android:id="@+id/tBarLogin"
         android:layout_gravity="top"
         android:visibility="visible" />
 

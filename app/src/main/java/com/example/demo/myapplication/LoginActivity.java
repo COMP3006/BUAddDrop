@@ -14,8 +14,9 @@ import com.example.demo.myapplication.Components.Interface.DBCommunicator;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, DBCommunicator {
 
     private Button blogin;
+    public Button tBarHome, tBarRegister;
     EditText etUsername, etPassword;
-    TextView tvRegisterlink, tvInputinfo;
+    TextView tvInputinfo;
 
     private MainController mMainController;
 
@@ -27,13 +28,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
         blogin = (Button) findViewById(R.id.blogin);
-        tvRegisterlink = (TextView) findViewById(R.id.tvRegisterLink);
+        tBarHome = (Button) findViewById(R.id.tBarHome);
+        tBarRegister = (Button) findViewById(R.id.tBarRegister);
         tvInputinfo = (TextView) findViewById(R.id.tvInputinfo);
         mMainController = new MainController(this);
 
-
         blogin.setOnClickListener(this);
-        tvRegisterlink.setOnClickListener(this);
+        tBarHome.setOnClickListener(this);
+        tBarRegister.setOnClickListener(this);
     }
 
 
@@ -54,9 +56,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
 
-            case R.id.tvRegisterLink:
+            case R.id.tBarRegister:
                 startActivity(new Intent(this, RegistrationActivity.class));
+                break;
 
+            case R.id.tBarHome:
+                startActivity(new Intent(this, SearchActivity.class));
                 break;
         }
     }

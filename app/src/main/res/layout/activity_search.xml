@@ -8,16 +8,10 @@
     tools:context="com.example.demo.myapplication.SearchActivity">
 
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="?attr/homeAsUpIndicator"
-        android:id="@+id/imageButton" />
-
     <Button
         android:text="Register"
         android:layout_height="wrap_content"
-        android:id="@+id/Register"
+        android:id="@+id/tBarRegister"
         android:layout_width="wrap_content"
         android:layout_gravity="top|right" />
 
@@ -25,8 +19,16 @@
         android:text="Log In"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/LogIn"
-        android:layout_gravity="top" />
+        android:id="@+id/tBarLogin"
+        android:layout_gravity="top"
+        android:visibility="visible" />
+
+    <Button
+        android:text="Home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tBarHome"
+        android:background="@android:color/darker_gray" />
 
     <EditText
         android:layout_width="308dp"

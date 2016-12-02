@@ -7,11 +7,11 @@
     android:fitsSystemWindows="true"
     tools:context="com.example.demo.myapplication.LoginActivity">
 
-    <ImageButton
+    <Button
+        android:text="Home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="?attr/homeAsUpIndicator"
-        android:id="@+id/imageButton" />
+        android:id="@+id/tBarHome" />
 
     <Button
         android:text="Register"
@@ -19,19 +19,7 @@
         android:id="@+id/Register"
         android:layout_width="wrap_content"
         android:layout_gravity="top|right"
-        android:visibility="invisible" />
-
-    <TextView
-        android:text="Register Here!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/blogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
-        android:id="@+id/tvRegisterLink"
-        android:textColor="@android:color/holo_blue_dark"
-        android:visibility="visible"
-        android:layout_gravity="top|right" />
+        android:visibility="visible" />
 
     <Button
         android:text="Log In"
@@ -39,7 +27,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/LogIn"
         android:layout_gravity="top"
-        android:visibility="invisible" />
+        android:visibility="visible"
+        android:background="@android:color/darker_gray" />
 
     <Button
         android:text="Login"
