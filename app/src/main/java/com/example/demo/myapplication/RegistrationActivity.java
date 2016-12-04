@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.demo.myapplication.Components.Interface.DBCommunicator;
@@ -13,7 +13,7 @@ import com.example.demo.myapplication.Components.Interface.DBCommunicator;
 public class RegistrationActivity extends AppCompatActivity implements DBCommunicator, View.OnClickListener {
 
     public Button tBarLogin, tBarHome, mRegisterButton;
-    private EditText mUsernameField, mPasswordField, mPassword2Field;
+    private TextView mUsernameField, mPasswordField, mPassword2Field;
 
     private MainController mMainController;
 
@@ -22,10 +22,10 @@ public class RegistrationActivity extends AppCompatActivity implements DBCommuni
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        mRegisterButton = (Button) findViewById(R.id.mRegisterButton);
-        mUsernameField = (EditText) findViewById(R.id.register_edit_text_username);
-        mPasswordField = (EditText) findViewById(R.id.register_edit_text_userpassword);
-        mPassword2Field = (EditText) findViewById(R.id.register_edit_text_userpassword2);
+        mRegisterButton = (Button)findViewById(R.id.mRegisterButton);
+        mUsernameField  = (TextView)findViewById(R.id.register_edit_text_username);
+        mPasswordField  = (TextView)findViewById(R.id.register_edit_text_userpassword);
+        mPassword2Field  = (TextView)findViewById(R.id.register_edit_text_userpassword2);
         tBarLogin = (Button) findViewById(R.id.tBarLogin);
         tBarHome = (Button) findViewById(R.id.tBarHome);
 
