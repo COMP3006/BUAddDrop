@@ -63,7 +63,7 @@ public class RegistrationActivity extends AppCompatActivity implements DBCommuni
                 break;
 
             case R.id.tBarHome:
-                startActivity(new Intent(this, SearchActivity.class));
+                startActivity(new Intent(this, HomeActivity.class));
                 break;
         }
     }

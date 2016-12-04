@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements DBCommunicator, 
                 break;
 
             case R.id.tBarHome:
-                startActivity(new Intent(this, SearchActivity.class));
+                startActivity(new Intent(this, HomeActivity.class));
                 break;
         }
     }

@@ -2,21 +2,30 @@ package com.example.demo.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Button;
+import android.widget.RatingBar;
+import android.widget.Toast;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseInfoActivity extends AppCompatActivity
-{
+public class CourseInfoActivity extends AppCompatActivity {
     private TextView textView_course_info;
     private ListView listView_section_info;
     private ListView listView_comment;
 
     private List<String> sections;
     private List<String> comments;
+
+    private static Button buttonRate;
+    private static TextView textView;
+    private static RatingBar ratingBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,8 +37,38 @@ public class CourseInfoActivity extends AppCompatActivity
         listView_section_info = (ListView) findViewById(R.id.listView_section_info);
         listView_comment = (ListView) findViewById(R.id.listView_comment);
 
+        listenerForRatingBar();
+        onButtonClickListener();
 
         set_data();
+    }
+
+    public void listenerForRatingBar() {
+        ratingBar = (RatingBar) findViewById(R.id.rating_bar);
+        textView = (TextView) findViewById(R.id.text_view);
+        ratingBar.setOnRatingBarChangeListener(
+                new RatingBar.OnRatingBarChangeListener() {
+                    @Override
+                    public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                        textView.setText(String.valueOf(v));
+                    }
+                }
+        );
+    }
+
+    public void onButtonClickListener() {
+        ratingBar = (RatingBar) findViewById(R.id.rating_bar);
+        buttonRate = (Button) findViewById(R.id.button_rate);
+        buttonRate.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(CourseInfoActivity.this,
+                                String.valueOf(ratingBar.getRating()),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
     }
 
     private void set_data()

@@ -32,7 +32,7 @@ public class MainController
     public void register(String username, String password)
     {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://127.0.0.1/")
+                .baseUrl("http://202.125.249.223/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         UserService userService = retrofit.create(UserService.class);
