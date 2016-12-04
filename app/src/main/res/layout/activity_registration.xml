@@ -22,8 +22,11 @@
         android:layout_height="wrap_content"
         android:text="Register"
         android:id="@+id/mRegisterButton"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_width="wrap_content" />
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp" />
 
     <Button
         android:text="Home"
@@ -40,32 +43,41 @@
         android:visibility="visible" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="username"
+        android:hint="HKBU email"
         android:id="@+id/register_edit_text_username"
+        android:background="@color/colorAccent"
         android:singleLine="true"
         android:layout_gravity="left|center_vertical"
-        android:layout_marginBottom="100dp" />
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="password"
         android:id="@+id/register_edit_text_userpassword"
-        android:singleLine="true"
-        android:password="true"
-        android:layout_gravity="left|center_vertical" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="confirmed password"
-        android:id="@+id/register_edit_text_userpassword2"
+        android:background="@color/colorAccent"
         android:singleLine="true"
         android:password="true"
         android:layout_gravity="left|center_vertical"
-        android:layout_marginTop="100dp" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="confirmed password"
+        android:id="@+id/register_edit_text_userpassword2"
+        android:background="@color/colorAccent"
+        android:singleLine="true"
+        android:password="true"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp" />
 
     <include layout="@layout/content_search" />
 

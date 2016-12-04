@@ -7,8 +7,8 @@ package com.example.demo.myapplication.Components.Interface;
 public interface DBCommunicator
 {
 
-    public void onResultReceived(String s);
+    void onResultReceived(String s);
 
-    public void onErrorReceived(String s);
+    void onErrorReceived(String s);
 
 }

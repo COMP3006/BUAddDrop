@@ -16,7 +16,7 @@
     <Button
         android:text="Register"
         android:layout_height="wrap_content"
-        android:id="@+id/Register"
+        android:id="@+id/tBarRegister"
         android:layout_width="wrap_content"
         android:layout_gravity="top|right"
         android:visibility="visible" />
@@ -25,30 +25,20 @@
         android:text="Log In"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/LogIn"
+        android:id="@+id/tBarLogin"
         android:layout_gravity="top"
         android:visibility="visible"
         android:background="@android:color/darker_gray" />
 
     <Button
         android:text="Login"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/blogin"
-        android:layout_below="@+id/etUsername"
-        android:layout_alignStart="@+id/tvRegisterLink"
-        android:layout_gravity="bottom|center" />
-
-    <TextView
-        android:text="Please login with username and password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvInputinfo"
-        android:layout_marginBottom="69dp"
-        android:layout_above="@+id/blogin"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="top|right"
-        android:visibility="invisible" />
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="150dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -59,9 +49,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:singleLine="true"
-        android:hint="username"
+        android:hint="HKBU email"
+        android:background="@color/colorAccent"
         android:layout_gravity="center_vertical"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -74,8 +67,11 @@
         android:singleLine="true"
         android:password="true"
         android:hint="password"
+        android:background="@color/colorAccent"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp" />
 
     <include layout="@layout/content_search" />
 

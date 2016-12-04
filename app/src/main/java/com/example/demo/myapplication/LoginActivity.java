@@ -6,17 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.demo.myapplication.Components.Interface.DBCommunicator;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener, DBCommunicator {
+public class LoginActivity extends AppCompatActivity implements DBCommunicator, View.OnClickListener {
 
     private Button blogin;
     public Button tBarHome, tBarRegister;
     EditText etUsername, etPassword;
-    TextView tvInputinfo;
 
     private MainController mMainController;
 
@@ -30,12 +28,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         blogin = (Button) findViewById(R.id.blogin);
         tBarHome = (Button) findViewById(R.id.tBarHome);
         tBarRegister = (Button) findViewById(R.id.tBarRegister);
-        tvInputinfo = (TextView) findViewById(R.id.tvInputinfo);
-        mMainController = new MainController(this);
 
         blogin.setOnClickListener(this);
         tBarHome.setOnClickListener(this);
         tBarRegister.setOnClickListener(this);
+
+        mMainController = new MainController(this);
     }
 
 

@@ -30,14 +30,13 @@
         android:id="@+id/tBarHome"
         android:background="@android:color/darker_gray" />
 
-    <EditText
+    <SearchView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:label="@string/app_name"
         android:layout_width="308dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_alignParentTop="true"
-        android:id="@+id/etUsername"
+        android:id="@+id/searchBar"
         android:layout_alignParentStart="true"
-        android:hint="e.g. COMP3006, Software Engineering"
         android:layout_gravity="center_vertical"
         android:layout_alignParentEnd="true"
         android:singleLine="true"
@@ -45,5 +44,17 @@
         android:outlineProvider="none" />
 
     <include layout="@layout/content_search" />
+
+    <TextView
+        android:text="Explore Courses"
+        android:layout_height="wrap_content"
+        android:id="@+id/ExploreCourses"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="150dp"
+        android:textSize="36sp"
+        android:fontFamily="serif"
+        android:textAllCaps="false" />
+
 
 </android.support.design.widget.CoordinatorLayout>

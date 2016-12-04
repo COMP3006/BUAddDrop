@@ -11,4 +11,7 @@
     <string name="course_sec_section">Section: </string>
     <string name="course_sec_lecturer">Lecturer: </string>
     <string name="course_sec_time">Time: </string>
+
+    <string name="search_hint">e.g. Course code, names </string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
