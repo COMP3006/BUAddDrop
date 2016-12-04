@@ -68,6 +68,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     public void onResultReceived(String text)
     {
+        text = "COMP3006 Software Engineering<br>COMP3005 Design and Analysis of Algorithms<br>MATH1005 Calculus<br>MATH1205 Discrete Mathematics<br>...<br>...<br>...<br>...<br>...<br>...<br>...<br>...<br>";
+
         listData = processData(text);
     }
 
@@ -78,8 +80,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     public List<String> processData(String rawData)
     {
-        rawData = "COMP3006 Software Engineering<br>COMP3005 Design and Analysis of Algorithms<br>MATH1005 Calculus<br>MATH1205 Discrete Mathematics<br>...<br>...<br>...<br>...<br>...<br>...<br>...<br>...<br>";
-
         final String divider = "<br>";
 
         List<String> ld = new ArrayList<String>();
