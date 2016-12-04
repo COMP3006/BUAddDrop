@@ -23,6 +23,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Created by Samuel on 11/30/2016.
+ */
+
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener, DBCommunicator
 {
     private Button b_logout;

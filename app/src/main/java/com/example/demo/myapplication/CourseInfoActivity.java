@@ -9,6 +9,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by Samuel on 11/30/2016.
+ */
+
 public class CourseInfoActivity extends AppCompatActivity
 {
     private TextView textView_course_info;
