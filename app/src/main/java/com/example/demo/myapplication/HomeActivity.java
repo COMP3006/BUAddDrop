@@ -78,21 +78,27 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     public List<String> processData(String rawData)
     {
-        List<String> ld = new ArrayList<String>();
+        rawData = "COMP3006 Software Engineering<br>COMP3005 Design and Analysis of Algorithms<br>MATH1005 Calculus<br>MATH1205 Discrete Mathematics<br>...<br>...<br>...<br>...<br>...<br>...<br>...<br>...<br>";
 
-        //CODE TO PROCESS RAW DATA
-        ld.add("COMP3006 Software Engineering");
-        ld.add("COMP3005 Design and Analysis of Algorithms");
-        ld.add("MATH1005 Calculus");
-        ld.add("MATH1205 Discrete Mathematics");
-        ld.add("...");
-        ld.add("...");
-        ld.add("...");
-        ld.add("...");
-        ld.add("...");
-        ld.add("...");
-        ld.add("...");
-        ld.add("...");
+        final String divider = "<br>";
+
+        List<String> ld = new ArrayList<String>();
+        String temp = "";
+
+        for(int i=0; i<rawData.length(); ++i)
+        {
+            if(i+divider.length()-1 < rawData.length() && rawData.substring(i,i+divider.length()).equals(divider))
+            {
+                ld.add(temp);
+                temp = "";
+                i+=divider.length()-1;
+            }
+            else
+            {
+                temp += rawData.charAt(i);
+            }
+        }
+        if(!temp.isEmpty()) ld.add(temp);
 
         return ld;
     }
